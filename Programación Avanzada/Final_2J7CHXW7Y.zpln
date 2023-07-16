@@ -1,0 +1,623 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%mySQL\n\nSELECT p.nombre_provincia, COUNT(h.id_hogar) AS total_hogares\nFROM provincia p\nJOIN canton c ON p.cod_provincia = c.provincia_canton\nJOIN parroquia pa ON c.cod_canton = pa.cod_canton\nJOIN vivienda v ON pa.cod_parroquia = v.cod_parroquia\nJOIN hogar h ON v.id_vivienda = h.id_vivienda\nGROUP BY p.nombre_provincia\nORDER BY total_hogares DESC;",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-16T02:16:43+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "scatterChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "nombre_provincia": "string",
+                      "total_hogares": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [],
+              "groups": [],
+              "values": []
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "nombre_provincia\ttotal_hogares\n Pichincha\t3882\n Guayas\t3219\n El Oro\t2839\n Azuay\t2417\n Tungurahua\t2232\n Esmeraldas\t1563\n Imbabura\t1223\n Santa Elena\t938\n Loja\t914\n Sucumbíos\t657\n Carchi\t583\n Manabi\t563\n Santo Domingo\t503\n Los Rios\t498\n Zamora Chinchipe\t497\n Cañar\t491\n Bolivar\t490\n Pastaza\t486\n Orellana\t484\n Chimborazo\t484\n Cotopaxi\t483\n Napo\t400\n Morona Santiago\t326\n Galápagos\t321\n Zonas No Delimitadas\t87\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689466401954_578258671",
+      "id": "paragraph_1689466401954_578258671",
+      "dateCreated": "2023-07-16T00:13:21+0000",
+      "dateStarted": "2023-07-16T02:15:48+0000",
+      "dateFinished": "2023-07-16T02:15:49+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:186",
+      "title": "Distribución de hogares por provincia"
+    },
+    {
+      "text": "%mySQL\n\nSELECT tipo_vivienda, COUNT(*) AS total_viviendas\nFROM vivienda\nGROUP BY tipo_vivienda\nORDER BY total_viviendas DESC;\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-16T02:17:26+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "tipo_vivienda": "string",
+                      "total_viviendas": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689466680040_874558831",
+      "id": "paragraph_1689466680040_874558831",
+      "dateCreated": "2023-07-16T00:18:00+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:187",
+      "dateFinished": "2023-07-16T02:17:10+0000",
+      "dateStarted": "2023-07-16T02:17:10+0000",
+      "title": "Tipo de vivienda más común",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "tipo_vivienda\ttotal_viviendas\nCasa o Villa\t15592\nDepartamento\t8036\nRancho, covacha\t1314\nMediagua\t807\nCuartos en casa de inquilinato\t678\nChoza\t6\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%mySQL\n\nSELECT p.nombre_provincia, COUNT(h.id_hogar) AS total_hogares\nFROM provincia p\nJOIN canton c ON p.cod_provincia = c.provincia_canton\nJOIN parroquia pa ON c.cod_canton = pa.cod_canton\nJOIN vivienda v ON pa.cod_parroquia = v.cod_parroquia\nJOIN hogar h ON v.id_vivienda = h.id_vivienda\nJOIN servicios_basicos sb ON h.id_hogar = sb.id_hogar\nWHERE sb.servicio_higienico != 'No tiene' AND sb.tipo_alumbrado = '1'\nGROUP BY p.nombre_provincia\nORDER BY total_hogares DESC;\n\n//Total de hogares que tieien algun tipo de servicio higienico y que poseen alumbrado\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-16T02:21:14+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "nombre_provincia": "string",
+                      "total_hogares": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "nombre_provincia",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "total_hogares",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689473830494_1238466073",
+      "id": "paragraph_1689473830494_1238466073",
+      "dateCreated": "2023-07-16T02:17:10+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1692",
+      "dateFinished": "2023-07-16T02:19:56+0000",
+      "dateStarted": "2023-07-16T02:19:56+0000",
+      "title": "Nivel de acceso a servicios básicos por provincia",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "nombre_provincia\ttotal_hogares\n Pichincha\t3860\n Guayas\t3182\n El Oro\t2817\n Azuay\t2394\n Tungurahua\t2218\n Esmeraldas\t1473\n Imbabura\t1180\n Santa Elena\t920\n Loja\t887\n Sucumbíos\t609\n Carchi\t570\n Manabi\t553\n Santo Domingo\t494\n Los Rios\t490\n Cañar\t478\n Bolivar\t476\n Cotopaxi\t471\n Chimborazo\t468\n Zamora Chinchipe\t461\n Pastaza\t429\n Orellana\t426\n Napo\t363\n Galápagos\t321\n Morona Santiago\t265\n Zonas No Delimitadas\t87\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%mySQL\nSELECT estrato, COUNT(*) AS total_hogares\nFROM vivienda\nGROUP BY estrato\nORDER BY total_hogares DESC;\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-16T02:21:35+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "estrato": "string",
+                      "total_hogares": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689473872445_1628926705",
+      "id": "paragraph_1689473872445_1628926705",
+      "dateCreated": "2023-07-16T02:17:52+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:2231",
+      "dateFinished": "2023-07-16T02:21:34+0000",
+      "dateStarted": "2023-07-16T02:21:34+0000",
+      "title": "Estratos?",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "estrato\ttotal_hogares\n2612\t1239\n2512\t1064\n2511\t994\n2812\t921\n2712\t752\n2513\t743\n2611\t713\n2813\t667\n2912\t660\n2613\t658\n2711\t584\n2913\t578\n2811\t576\n2713\t575\n2911\t498\n0812\t334\n0813\t330\n1013\t326\n2412\t250\n2411\t249\n1012\t248\n1713\t247\n2413\t246\n0821\t245\n0811\t243\n0822\t240\n0412\t168\n1113\t168\n1111\t167\n1721\t167\n1711\t167\n2122\t167\n0713\t166\n0911\t166\n1011\t166\n1121\t166\n1722\t166\n0823\t165\n1021\t165\n1122\t165\n1712\t165\n0712\t164\n1023\t164\n1022\t164\n1312\t164\n1519\t164\n1723\t163\n2429\t163\n2011\t162\n2112\t162\n1112\t160\n2312\t159\n0222\t84\n0323\t84\n0422\t84\n0522\t84\n0711\t84\n0923\t84\n0912\t84\n1123\t84\n1213\t84\n1223\t84\n1623\t84\n1821\t84\n1923\t84\n1922\t84\n1911\t84\n1921\t84\n2223\t84\n0111\t83\n0121\t83\n0212\t83\n0322\t83\n0413\t83\n0421\t83\n0411\t83\n0622\t83\n0921\t83\n0922\t83\n1322\t83\n1422\t83\n1611\t83\n1823\t83\n2111\t83\n2121\t83\n2313\t83\n0122\t82\n0113\t82\n0123\t82\n0213\t82\n0223\t82\n0313\t82\n0423\t82\n0511\t82\n0523\t82\n0723\t82\n1212\t82\n1211\t82\n1313\t82\n1612\t82\n1811\t82\n1813\t82\n1913\t82\n2123\t82\n2211\t82\n2222\t82\n0311\t81\n0612\t81\n0623\t81\n0621\t81\n0722\t81\n1222\t81\n1311\t81\n1423\t81\n1421\t81\n1622\t81\n1812\t81\n2023\t81\n2311\t81\n0312\t80\n0913\t80\n1221\t80\n1323\t80\n1523\t80\n1613\t80\n1822\t80\n2113\t80\n2322\t80\n0221\t79\n0321\t79\n0512\t79\n0521\t79\n0613\t79\n0611\t79\n1321\t79\n1419\t79\n1522\t79\n0112\t78\n0211\t78\n1912\t78\n2022\t78\n2212\t78\n2221\t78\n2323\t78\n0513\t77\n0721\t77\n1521\t77\n2213\t77\n2321\t77\n1621\t76\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%mySQL\n\nSELECT CASE\n         WHEN valor_arriendo < 100 THEN '0-99'\n         WHEN valor_arriendo >= 100 AND valor_arriendo < 200 THEN '100-199'\n         WHEN valor_arriendo >= 200 AND valor_arriendo < 300 THEN '200-299'\n         ELSE '300+'\n       END AS rango_arriendo,\n       COUNT(*) AS total_hogares\nFROM hogar\nGROUP BY rango_arriendo;\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-16T02:22:16+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "rango_arriendo0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0,
+                          "direction": "asc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "total_hogares1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "rango_arriendo": "string",
+                      "total_hogares": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689474081493_574498517",
+      "id": "paragraph_1689474081493_574498517",
+      "dateCreated": "2023-07-16T02:21:21+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:3888",
+      "dateFinished": "2023-07-16T02:21:47+0000",
+      "dateStarted": "2023-07-16T02:21:47+0000",
+      "title": "Rango Arriendo",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "rango_arriendo\ttotal_hogares\n100-199\t11197\n200-299\t5496\n300+\t3122\n0-99\t6765\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\n\nEsta consulta muestra la relación entre el acceso principal (por ejemplo, puerta principal, pasillo, etc.) y el tipo de tenencia de la vivienda (por ejemplo, propia, arrendada, etc.), contando el número de hogares para cada combinación de acceso principal y tipo de tenencia.",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-16T02:23:07+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689474155466_1035520701",
+      "id": "paragraph_1689474155466_1035520701",
+      "dateCreated": "2023-07-16T02:22:35+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:6510",
+      "dateFinished": "2023-07-16T02:22:51+0000",
+      "dateStarted": "2023-07-16T02:22:49+0000",
+      "title": "Relación entre variables",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Esta consulta muestra la relación entre el acceso principal (por ejemplo, puerta principal, pasillo, etc.) y el tipo de tenencia de la vivienda (por ejemplo, propia, arrendada, etc.), contando el número de hogares para cada combinación de acceso principal y tipo de tenencia.</p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%mySQL\n\nSELECT acceso_principal, tipo_tenencia, COUNT(*) AS total_hogares\nFROM hogar\nGROUP BY acceso_principal, tipo_tenencia;\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-16T02:22:26+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689474107226_2102079495",
+      "id": "paragraph_1689474107226_2102079495",
+      "dateCreated": "2023-07-16T02:21:47+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:5077",
+      "dateFinished": "2023-07-16T02:22:26+0000",
+      "dateStarted": "2023-07-16T02:22:26+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "acceso_principal\ttipo_tenencia\ttotal_hogares\nCarretera, calle pavimentada\tPropia y totalmente pagada\t11231\nCarretera, calle pavimentada\tEn Arriendo\t4298\nLastrado, calle de tierra\tEn Arriendo\t510\nLastrado, calle de tierra\tPropia y totalmente pagada\t4480\nLastrado, calle de tierra\tCedida\t1036\nCarretera, calle pavimentada\tCedida\t2898\nCarretera, calle pavimentada\tPropia y la esta pagando\t470\nCarretera, calle pavimentada\tRecibida por servicios\t141\nSendero\tPropia y totalmente pagada\t506\nSendero\tCedida\t93\nLastrado, calle de tierra\tPropia y la esta pagando\t93\nEmpedrado\tPropia y totalmente pagada\t376\nSendero\tEn Arriendo\t19\n\tCedida\t16\nEmpedrado\tEn Arriendo\t66\nRio, mar\tEn Arriendo\t5\n\tEn Arriendo\t9\nLastrado, calle de tierra\tRecibida por servicios\t94\n\tPropia y totalmente pagada\t33\nCarretera, calle pavimentada\tAnticresis y/o arriendo\t14\nLastrado, calle de tierra\tAnticresis y/o arriendo\t1\nEmpedrado\tCedida\t88\nEmpedrado\tPropia y la esta pagando\t12\nEmpedrado\tRecibida por servicios\t10\nCarretera, calle pavimentada\tOtra\t8\nSendero\tRecibida por servicios\t11\nRio, mar\tPropia y totalmente pagada\t54\nRio, mar\tCedida\t3\n\tPropia y la esta pagando\t1\nSendero\tPropia y la esta pagando\t4\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%mySQL\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-16T02:22:33+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689474153028_1794418633",
+      "id": "paragraph_1689474153028_1794418633",
+      "dateCreated": "2023-07-16T02:22:33+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:6435"
+    },
+    {
+      "text": "%mySQL\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-16T02:22:26+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689474146544_1286444729",
+      "id": "paragraph_1689474146544_1286444729",
+      "dateCreated": "2023-07-16T02:22:26+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:5687"
+    }
+  ],
+  "name": "Final",
+  "id": "2J7CHXW7Y",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Final"
+}
