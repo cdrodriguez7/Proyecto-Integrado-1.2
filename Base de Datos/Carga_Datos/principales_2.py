@@ -396,7 +396,18 @@ for index, row in servicios_basicos.iterrows():
         obtencion_agua = 'Otro'
     else:
         obtencion_agua = ''
-
+            
+    if servicio_higienico == '1':
+        servicio_higienico = 'Empresa eléctrica pública'
+    elif agua_medidor == '2':
+        agua_medidor = 'Planta eléctrica privada'
+    elif agua_medidor == '3':
+        agua_medidor = 'No red eléctrica'
+    elif agua_medidor == '4':
+        agua_medidor = 'Ninguno'
+    else:
+        obtencion_agua = '' 
+            
     if agua_medidor == '1':
         agua_medidor = 'Si'
     elif agua_medidor == '2':
