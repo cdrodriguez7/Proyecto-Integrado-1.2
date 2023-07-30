@@ -19,7 +19,7 @@ cols = ['area', 'ciudad', 'conglomerado', 'panelm', 'nro_vivienda', 'nro_hogar',
 dtype = {col: str for col in cols}
 
 #Leer csv con Raw data
-ubiRawData = 'C:/Users/Daniel/Utpl/PrIntegrador1.2/enemdu_vivienda_hogar_2023_I_trimestre.csv'
+ubiRawData = '/workspace/zeppelin-paavanzada/enemdu_vivienda_hogar_2023_I_trimestre.csv'
 
 df = pd.read_csv(ubiRawData,
     sep=';',
@@ -71,7 +71,7 @@ hogar_combustibles = df[['id_hogar', 'abastecimiento_super', 'gasto_super', 'aba
 cnx = mysql.connector.connect(
     host='127.0.0.1',
     user='root',
-    password='BBERczac57!@',
+    password='',
     database='mydb_integrador'
 )
 
@@ -180,8 +180,7 @@ for index, row in hogar.iterrows():
     elif acceso_principal == '5':
         acceso_principal = 'Rio, mar'
     elif acceso_principal == '6':
-        tipo_acceso_principal = 'Otro:'
-        acceso_principal = ''
+        acceso_principal = 'Otro'
 
     ##  ducha
     if ducha == '1':
@@ -238,8 +237,8 @@ for index, row in hogar.iterrows():
         material_piso = 'Cerámica, baldosa, vinil o porcelanato'
     elif material_piso == '3':
         material_piso = 'Mármol o marmeton'
-    elif material_techo == '4':
-        material_techo = 'Ladrillo o cemento'
+    elif material_piso == '4':
+        material_piso = 'Ladrillo o cemento'
     elif material_piso == '5':
         material_piso = 'Tabla / tablón no tratado'
     elif material_piso == '6':
@@ -396,18 +395,7 @@ for index, row in servicios_basicos.iterrows():
         obtencion_agua = 'Otro'
     else:
         obtencion_agua = ''
-            
-    if servicio_higienico == '1':
-        servicio_higienico = 'Empresa eléctrica pública'
-    elif agua_medidor == '2':
-        agua_medidor = 'Planta eléctrica privada'
-    elif agua_medidor == '3':
-        agua_medidor = 'No red eléctrica'
-    elif agua_medidor == '4':
-        agua_medidor = 'Ninguno'
-    else:
-        obtencion_agua = '' 
-            
+
     if agua_medidor == '1':
         agua_medidor = 'Si'
     elif agua_medidor == '2':
@@ -421,6 +409,16 @@ for index, row in servicios_basicos.iterrows():
         agua_junta = 'No'
     else:
         agua_junta = ''
+
+    if tipo_alumbrado == '1':
+        tipo_alumbrado = 'Empresa eléctrica pública'
+    elif tipo_alumbrado == '2':
+        tipo_alumbrado = 'Planta eléctrica privada'
+    elif tipo_alumbrado == '3':
+        tipo_alumbrado = 'Vela, candil, mechero, gas'
+    else:
+        tipo_alumbrado = 'Ninguno'
+
 
     if tipo_tuberia == '1':
         tipo_tuberia = 'Por tubería dentro de la vivienda'

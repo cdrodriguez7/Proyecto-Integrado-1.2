@@ -4,15 +4,15 @@ import pandas as pd
 import mysql.connector
 
 #Reemplazar con ubicación del Csv Complementario 'Provincias', 'Cantones', 'Parroquias'
-ubiProvincias = 'C:/Users/Daniel/Utpl/PrIntegrador1.2/Complementarios/Provincias.csv'
-ubiCantones = 'C:/Users/Daniel/Utpl/PrIntegrador1.2/Complementarios/Cantones.csv'
-ubiParroquias = 'C:/Users/Daniel/Utpl/PrIntegrador1.2/Complementarios/Parroquias.csv'
+ubiProvincias = '/workspace/zeppelin-paavanzada/Complementarios/Provincias.csv'
+ubiCantones = '/workspace/zeppelin-paavanzada/Complementarios/Cantones.csv'
+ubiParroquias = '/workspace/zeppelin-paavanzada/Complementarios/Parroquias.csv'
 
 # Establecer coneccion MySQL database asumiendo que se ejecutó el DDL
 cnx = mysql.connector.connect(
     host='127.0.0.1',
     user='root',
-    password='BBERczac57!@',
+    password='',
     database='mydb_integrador'
 )
 
@@ -62,8 +62,8 @@ for index, row in dfProvincias.iterrows():
     # Construct the INSERT query
     query = "INSERT INTO provincia (cod_provincia, nombre_provincia, tasa_desempleo, empleo_no_remunerado, " \
             "empleo_bruto, asistencia_edu_basica, tasa_analfabetismo) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-    values = (row['cod_provincia'], row['nombre_provincia'], row['empleo_bruto'], row['empleo_no_remunerado'],
-              row['tasa_desempleo'], row['tasa_analfabetismo'], row['asistencia_edu_basica'])
+    values = (row['cod_provincia'], row['nombre_provincia'],  row['tasa_desempleo'], 
+            row['empleo_no_remunerado'], row['empleo_bruto'], row['asistencia_edu_basica'], row['tasa_analfabetismo'],)
     # Execute the query
     cursor01.execute(query, values)
 # Commit the changes to the database
