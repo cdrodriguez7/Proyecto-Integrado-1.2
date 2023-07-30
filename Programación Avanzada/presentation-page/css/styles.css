@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 3fr 0.2fr; /* Agregamos una fila para el footer */
+  grid-template-areas:
+    "header"
+    "main"
+    "footer"; /* Nombre del área para el footer */
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  height: 70px;
+  background-color: #063970;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+  border-bottom: 8px solid #ffc200; /* Agregamos una línea amarilla en la parte inferior */
+}
+
+.header h1 {
+  margin: 0;
+  align-items: right;
+  font-size: 24px; /* Tamaño de las letras */
+}
+
+/* Estilos para la imagen en el header */
+.header img.logo-img {
+  width: 100px; /* Ancho del logo */
+  height: auto; /* Altura automática para mantener la proporción */
+  float: right; /* Alineación a la derecha */
+  margin: 5px 20px 5px 0; /* Margen para separar el logo del texto */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.main-container {
+  grid-area: main;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.main-container h2 {
+  margin-top: 0;
+  color: #063970;
+}
+
+.main-container h3 {
+    margin-top: 0;
+    color: #063970;
+  }
+
+.main-container p {
+  margin-bottom: 10px;
+}
+
+/* Pie de página*/
+
+.footer {
+  grid-area: footer;
+  background-color: #063970;
+  color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 10;
+}
+
+.footer li {
+  font-size: 16px;
+  margin-bottom: 5px;
+  /* Ajustamos el espacio de sangría de cada integrante debajo de su título */
+  text-indent: 0;
+  display: block; /* Mostrar cada integrante en una nueva línea */
+}
+
+.footer-section {
+    padding: 40px; /* Ajusta este valor según tu preferencia */
+  }
+
